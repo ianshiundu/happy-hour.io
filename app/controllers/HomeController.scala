@@ -8,7 +8,7 @@ import play.api.mvc._
  * application's home page.
  */
 @Singleton
-class HomeController @Inject()(cc: ControllerComponents) extends AbstractController(cc) {
+class HomeController @Inject()(cc: ControllerComponents, homepageTemplate: views.html.homepage) extends AbstractController(cc) {
 
   /**
    * Create an Action to render an HTML page with a welcome message.
@@ -18,6 +18,10 @@ class HomeController @Inject()(cc: ControllerComponents) extends AbstractControl
    */
   def index = Action {
     Ok(views.html.index("Your new application is ready."))
+  }
+
+  def homepage() = Action { implicit request: Request[AnyContent] =>
+    Ok(homepageTemplate())
   }
 
 }
