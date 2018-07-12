@@ -15,6 +15,8 @@ libraryDependencies ++= Seq( jdbc ,
   ws ,
   "org.webjars" %% "webjars-play" % "2.6.3",
   "org.webjars" % "salesforce-lightning-design-system" % "2.5.2",
+  "com.google.maps" % "google-maps-services" % "0.2.9",
+  "org.slf4j" % "slf4j-nop" % "1.7.25",
   specs2 % Test ,
   guice)
 
